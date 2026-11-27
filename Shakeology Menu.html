@@ -1,0 +1,390 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Shakeology Menu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: a symmetrical, centred "royal menu card". Hero with wordmark, gold ornament and the two couplets; a lineup of six glasses under gold arches; a double-bordered menu card; a framed signature panel; and a closing arch holding the stall number. Flat colour only, no glows. */
+:root {
+  --bg: #140d22;
+  --panel: #1b1230;
+  --ivory: #f3ead9;
+  --muted: #a99ec2;
+  --gold: #d8b765;
+  --line: rgba(216, 183, 101, 0.26);
+  --line-soft: rgba(243, 234, 217, 0.10);
+  --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  background: var(--bg); z-index: 20;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+section, header { scroll-margin-top: 4.5rem; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* Ornament */
+.orn { display: block; width: 190px; max-width: 70%; height: 16px; margin-inline: auto; }
+
+/* Nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 15;
+  background: var(--bg);
+  margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.6rem; }
+.brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ivory); text-decoration: none; }
+.links { display: flex; gap: 1.5rem; }
+.links a {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; padding-block: 0.3rem;
+  border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
+}
+.links a:hover { color: var(--gold); border-color: var(--gold); }
+
+/* Shared type */
+.eyebrow {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold);
+}
+.sh { text-align: center; }
+.sh h2 { margin: 0.9rem 0 1rem; font-family: var(--serif); font-weight: 500; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.02; letter-spacing: -0.01em; }
+.sh h2 em, .sig h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.sh p { margin: 1rem auto 0; max-width: 38ch; color: var(--muted); }
+
+/* Hero */
+.hero { text-align: center; padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem); }
+.hero .eyebrow { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.hero .eyebrow::before, .hero .eyebrow::after { content: ""; width: clamp(2rem, 9vw, 5rem); height: 1px; background: var(--line); }
+h1 {
+  margin: 1.1rem 0 0;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(3.6rem, 15vw, 9.6rem);
+  line-height: 0.95; letter-spacing: -0.02em; color: var(--ivory);
+}
+h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+.hero .orn { margin-top: 1.8rem; }
+.qgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 880px; margin: 2.4rem auto 0; }
+.couplet { margin: 0; padding: 0 clamp(1rem, 3.5vw, 2.8rem); min-width: 0; }
+.couplet + .couplet { border-left: 1px solid var(--line); }
+.couplet p { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.45rem, 2.8vw, 2rem); line-height: 1.3; color: var(--ivory); }
+.couplet span { display: block; }
+.couplet span + span { margin-top: 0.3rem; }
+.couplet em { color: var(--gold); font-weight: 600; }
+.cta-row { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; margin-top: 2.6rem; }
+.btn {
+  display: inline-block; padding: 0.85rem 1.8rem;
+  font-size: 0.74rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none;
+  border: 1px solid var(--gold); color: var(--bg); background: var(--gold);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover { background: transparent; color: var(--gold); }
+.btn.ghost { background: transparent; color: var(--ivory); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Lineup in arches */
+.lineup { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 3rem 3.2rem; }
+.lineup .grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; margin-top: 2.2rem; align-items: stretch; }
+.cup {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  padding: 2.4rem 0.6rem 1.1rem; min-width: 0;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 999px 999px 0 0;
+  text-decoration: none; color: var(--ivory);
+  transition: border-color 0.25s, background 0.25s;
+}
+.cup svg { width: 74%; max-width: 104px; height: auto; transition: transform 0.35s ease; }
+.cup:hover { border-color: var(--gold); }
+.cup:hover svg { transform: translateY(-6px); }
+.cup span { margin-top: 0.6rem; font-family: var(--serif); font-size: 1.15rem; font-weight: 500; text-align: center; line-height: 1.2; }
+.cup em { font-style: normal; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; color: var(--gold); font-variant-numeric: tabular-nums; }
+
+/* Double-border frame */
+.frame { position: relative; border: 1px solid var(--gold); background: var(--panel); }
+.frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--line); pointer-events: none; }
+.frame::after { content: ""; position: absolute; top: -5px; left: 50%; width: 9px; height: 9px; background: var(--gold); transform: translateX(-50%) rotate(45deg); }
+
+.block { padding-block: clamp(3.5rem, 8vw, 6rem); }
+
+/* Menu card */
+.menu { max-width: 800px; margin: 0 auto; padding: clamp(2.2rem, 6vw, 4rem) clamp(1.4rem, 6vw, 4.5rem); }
+.list { list-style: none; margin: 2.4rem 0 0; padding: 0; }
+.row { padding-block: 1.4rem; border-bottom: 1px solid var(--line-soft); scroll-margin-top: 5rem; }
+.row:last-child { border-bottom: 0; padding-bottom: 0; }
+.row .top { display: flex; align-items: baseline; gap: 0.9rem; }
+.row h3 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(1.55rem, 3.4vw, 2rem); line-height: 1.15; }
+.row .dots { flex: 1; min-width: 1.5rem; border-bottom: 1px dotted rgba(216, 183, 101, 0.55); transform: translateY(-0.3em); }
+.price { font-family: var(--serif); font-weight: 600; font-size: clamp(1.45rem, 3vw, 1.85rem); color: var(--gold); font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+.row p { margin: 0.35rem 0 0; max-width: 46ch; color: var(--muted); font-size: 0.97rem; }
+.row:target h3 { color: var(--gold); }
+
+/* Signature */
+.sig { max-width: 800px; margin: 0 auto; padding: clamp(2rem, 5vw, 3.6rem); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); align-items: center; gap: clamp(1.5rem, 5vw, 3.5rem); }
+.sig .art { display: flex; justify-content: center; }
+.sig .art svg { width: 100%; max-width: 190px; height: auto; }
+.sig h2 { margin: 0.9rem 0 0; font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 4.6vw, 3.2rem); line-height: 1.05; letter-spacing: -0.01em; }
+.sig p { margin: 1.1rem 0 0; max-width: 38ch; color: var(--muted); }
+.sig .price { display: block; margin-top: 1.4rem; font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 1; }
+
+/* Visit arch */
+.visit { text-align: center; border-top: 1px solid var(--line); }
+.arch { position: relative; width: min(100%, 440px); margin: 2.2rem auto 0; padding: 3.6rem 1.6rem 2.4rem; border: 1px solid var(--gold); border-radius: 999px 999px 0 0; background: var(--panel); }
+.arch::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--line); border-radius: 999px 999px 0 0; pointer-events: none; }
+.arch .label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); }
+.big20 { margin: 0.3rem 0 0; font-family: var(--serif); font-weight: 600; line-height: 0.9; font-size: clamp(7rem, 26vw, 11.5rem); color: transparent; -webkit-text-stroke: 1.4px var(--gold); font-variant-numeric: lining-nums; }
+.arch .orn { margin-top: 1.2rem; width: 150px; }
+.addr { margin: 1.3rem auto 0; max-width: 24ch; font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 3.6vw, 1.95rem); line-height: 1.25; color: var(--ivory); }
+.arch .note { margin: 0.9rem auto 0; max-width: 30ch; color: var(--muted); font-size: 0.95rem; }
+.arch .btn { margin-top: 1.6rem; }
+
+footer { border-top: 1px solid var(--line); padding-block: 2rem 2.4rem; text-align: center; }
+footer .orn { width: 120px; margin-bottom: 1rem; }
+footer p { margin: 0; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+footer strong { color: var(--ivory); font-weight: 500; }
+
+@media (max-width: 860px) {
+  .lineup .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 1.4rem; }
+  .cup svg { width: 66%; }
+}
+@media (max-width: 700px) {
+  .qgrid { grid-template-columns: minmax(0, 1fr); row-gap: 2rem; }
+  .couplet { padding: 0; }
+  .couplet + .couplet { border-left: 0; border-top: 1px solid var(--line); padding-top: 2rem; }
+  .sig { grid-template-columns: minmax(0, 1fr); text-align: center; }
+  .sig p { margin-inline: auto; }
+  .sig .art svg { max-width: 150px; }
+}
+@media (max-width: 440px) {
+  .links { gap: 1rem; }
+  .brand { letter-spacing: 0.2em; font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cup svg, .btn, .links a, .cup { transition: none; }
+  .cup:hover svg { transform: none; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="gl-body" d="M20 72 H100 L93 252 Q92.5 260 84 260 H36 Q27.5 260 27 252 Z"/>
+    <path id="gl-liq" d="M22.5 80 H97.5 L92 250 Q91.5 256 84 256 H36 Q28.5 256 28 250 Z"/>
+    <path id="gl-cream" d="M22 76 C17 58 30 54 38 54 C38 40 52 36 60 36 C68 36 82 40 82 54 C90 54 103 58 98 76 Z"/>
+  </defs>
+
+  <!-- Gold ornament -->
+  <symbol id="orn" viewBox="0 0 240 16">
+    <path d="M0 8 H98 M142 8 H240" stroke="#d8b765" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+    <path d="M120 1.5 L126.5 8 L120 14.5 L113.5 8 Z" fill="#d8b765"/>
+    <circle cx="104" cy="8" r="2" fill="#d8b765"/>
+    <circle cx="136" cy="8" r="2" fill="#d8b765"/>
+  </symbol>
+
+  <!-- Oreo -->
+  <symbol id="g-oreo" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#cdc4d6"/>
+    <g fill="#4b3f56"><circle cx="44" cy="120" r="2"/><circle cx="72" cy="104" r="2.4"/><circle cx="58" cy="150" r="2"/><circle cx="82" cy="172" r="2.2"/><circle cx="40" cy="194" r="2"/><circle cx="66" cy="214" r="2.4"/><circle cx="50" cy="236" r="2"/><circle cx="84" cy="130" r="1.8"/></g>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <g fill="#2b2230"><circle cx="46" cy="66" r="2.2"/><circle cx="72" cy="63" r="2.6"/><circle cx="86" cy="68" r="2"/><circle cx="58" cy="70" r="1.8"/></g>
+    <circle cx="62" cy="26" r="19" fill="#2b2230"/>
+    <circle cx="62" cy="26" r="13" fill="none" stroke="#54476a" stroke-width="1.4"/>
+    <path d="M52 22 H72 M50 28 H74 M54 34 H70" stroke="#54476a" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- KitKat -->
+  <symbol id="g-kitkat" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#a8683c"/>
+    <path d="M34 80 V128 Q34 134 38 134 Q42 134 42 128 V80Z M58 80 V176 Q58 182 62 182 Q66 182 66 176 V80Z M84 80 V112 Q84 118 88 118 Q92 118 92 112 V80Z" fill="#5a2c1c"/>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <g>
+      <g transform="rotate(-20 40 40)"><rect x="29" y="10" width="22" height="44" rx="2" fill="#7a4326"/><path d="M29 22 H51 M29 34 H51" stroke="#a8683c" stroke-width="1.4"/></g>
+      <g transform="rotate(0 60 40)"><rect x="49" y="2" width="22" height="50" rx="2" fill="#6b3a22"/><path d="M49 15 H71 M49 28 H71 M49 41 H71" stroke="#a8683c" stroke-width="1.4"/></g>
+      <g transform="rotate(20 80 40)"><rect x="69" y="10" width="22" height="44" rx="2" fill="#7a4326"/><path d="M69 22 H91 M69 34 H91" stroke="#a8683c" stroke-width="1.4"/></g>
+    </g>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- Chocolate -->
+  <symbol id="g-choc" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#7a432a"/>
+    <path d="M34 80 V150 Q34 156 38 156 Q42 156 42 150 V80Z M58 80 V120 Q58 126 62 126 Q66 126 66 120 V80Z M84 80 V190 Q84 196 88 196 Q92 196 92 190 V80Z" fill="#3a1b10"/>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <g transform="rotate(-14 42 30)"><rect x="30" y="16" width="24" height="24" rx="2" fill="#5c3020"/><path d="M38 16 V40 M46 16 V40 M30 24 H54 M30 32 H54" stroke="#3a1c10" stroke-width="1.2"/></g>
+    <g transform="rotate(16 78 24)"><rect x="66" y="8" width="24" height="24" rx="2" fill="#6b3a22"/><path d="M74 8 V32 M82 8 V32 M66 16 H90 M66 24 H90" stroke="#3a1c10" stroke-width="1.2"/></g>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- Alphonso -->
+  <symbol id="g-mango" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#f2ae1f"/>
+    <path d="M22.5 80 H97.5 L96 110 C80 118 64 104 48 112 C36 118 28 112 22.5 114Z" fill="#ffd45a" opacity="0.7"/>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <g fill="#ffcf4a" stroke="#e8920c" stroke-width="1.2">
+      <rect x="30" y="20" width="16" height="16" rx="1.5" transform="rotate(-18 38 28)"/>
+      <rect x="52" y="8" width="17" height="17" rx="1.5" transform="rotate(12 60 16)"/>
+      <rect x="74" y="18" width="16" height="16" rx="1.5" transform="rotate(24 82 26)"/>
+      <rect x="50" y="28" width="14" height="14" rx="1.5" transform="rotate(-8 57 35)"/>
+    </g>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- Strawberry -->
+  <symbol id="g-straw" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#e8708f"/>
+    <path d="M22.5 80 H97.5 L96 104 C80 112 64 98 48 106 C36 112 28 106 22.5 108Z" fill="#f4a0b6" opacity="0.7"/>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <path d="M60 54 C40 54 36 34 44 24 C50 17 70 17 76 24 C84 34 80 54 60 54Z" fill="#d6304f"/>
+    <path d="M48 20 L55 12 L60 19 L66 12 L72 20 L60 25Z" fill="#3f8f4f"/>
+    <g fill="#ffd9a0"><circle cx="52" cy="32" r="1.3"/><circle cx="66" cy="30" r="1.3"/><circle cx="59" cy="38" r="1.3"/><circle cx="50" cy="42" r="1.3"/><circle cx="70" cy="40" r="1.3"/></g>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+
+  <!-- Signature -->
+  <symbol id="g-sig" viewBox="0 0 120 270">
+    <use href="#gl-liq" fill="#5a1620"/>
+    <path d="M22.5 150 C46 138 70 168 97 154 L95 196 C70 210 46 178 21 192Z" fill="#c8334a" opacity="0.85"/>
+    <use href="#gl-cream" fill="#f6eee0"/>
+    <path d="M30 74 V146 Q30 154 34 154 Q38 154 38 146 V74Z M58 74 V204 Q58 212 62 212 Q66 212 66 204 V74Z M86 74 V118 Q86 126 90 126 Q94 126 94 118 V74Z" fill="#d4243f"/>
+    <g transform="rotate(-14 40 28)"><rect x="30" y="16" width="20" height="20" rx="2" fill="#f2dcb0" stroke="#d4243f" stroke-width="2"/></g>
+    <g transform="rotate(16 82 28)"><rect x="72" y="16" width="20" height="20" rx="2" fill="#f2dcb0" stroke="#d4243f" stroke-width="2"/></g>
+    <path d="M60 52 C46 52 43 38 49 31 C54 26 66 26 71 31 C77 38 74 52 60 52Z" fill="#d6304f"/>
+    <path d="M52 29 L57 23 L60 28 L64 23 L68 29 L60 32Z" fill="#3f8f4f"/>
+    <path d="M32 100 L35 236" stroke="#fff" stroke-opacity="0.25" stroke-width="3" stroke-linecap="round"/>
+    <use href="#gl-body" fill="none" stroke="#d8b765" stroke-opacity="0.7" stroke-width="1.2"/>
+  </symbol>
+</svg>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Shakeology</a>
+    <div class="links">
+      <a href="#menu">Menu</a>
+      <a href="#signature">Signature</a>
+      <a href="#visit">Visit</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="eyebrow">Stall No. 20</div>
+  <h1>Shake<em>ology</em></h1>
+  <svg class="orn" viewBox="0 0 240 16" aria-hidden="true"><use href="#orn"/></svg>
+  <div class="qgrid">
+    <blockquote class="couplet">
+      <p><span>Physics padho, phir padho Biology,</span><span>Agar thak jao, toh aao <em>Shakeology.</em></span></p>
+    </blockquote>
+    <blockquote class="couplet">
+      <p><span>Na hoga boring, na hoga wait,</span><span><em>Shakeology</em> ka taste is great.</span></p>
+    </blockquote>
+  </div>
+  <div class="cta-row">
+    <a class="btn" href="#menu">View the menu</a>
+    <a class="btn ghost" href="#signature">The signature</a>
+  </div>
+</header>
+
+<section class="lineup" aria-label="The lineup">
+  <div class="wrap">
+    <div class="sh"><div class="eyebrow">The Lineup</div></div>
+    <div class="grid">
+      <a class="cup" href="#m-oreo"><svg viewBox="0 0 120 270" role="img" aria-label="Oreo shake"><use href="#g-oreo"/></svg><span>Oreo</span><em>₹90</em></a>
+      <a class="cup" href="#m-kitkat"><svg viewBox="0 0 120 270" role="img" aria-label="KitKat shake"><use href="#g-kitkat"/></svg><span>KitKat</span><em>₹90</em></a>
+      <a class="cup" href="#m-choc"><svg viewBox="0 0 120 270" role="img" aria-label="Chocolate shake"><use href="#g-choc"/></svg><span>Chocolate</span><em>₹90</em></a>
+      <a class="cup" href="#m-mango"><svg viewBox="0 0 120 270" role="img" aria-label="Alphonso mango shake"><use href="#g-mango"/></svg><span>Alphonso</span><em>₹90</em></a>
+      <a class="cup" href="#m-straw"><svg viewBox="0 0 120 270" role="img" aria-label="Strawberry shake"><use href="#g-straw"/></svg><span>Strawberry</span><em>₹90</em></a>
+      <a class="cup" href="#signature"><svg viewBox="0 0 120 270" role="img" aria-label="Death By Chocolate Strawberry Loaded"><use href="#g-sig"/></svg><span>Loaded</span><em>₹130</em></a>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="menu">
+  <div class="menu frame">
+    <div class="sh">
+      <div class="eyebrow">The Menu</div>
+      <h2>The <em>classics</em></h2>
+      <svg class="orn" viewBox="0 0 240 16" aria-hidden="true"><use href="#orn"/></svg>
+      <p>Five shakes, one price. Every classic is ₹90.</p>
+    </div>
+    <ul class="list">
+      <li class="row" id="m-oreo">
+        <div class="top"><h3>Oreo Shake</h3><span class="dots"></span><span class="price">₹90</span></div>
+        <p>Crushed Oreo cookies blended into cold, creamy milk and finished with cookie crumble.</p>
+      </li>
+      <li class="row" id="m-kitkat">
+        <div class="top"><h3>KitKat Shake</h3><span class="dots"></span><span class="price">₹90</span></div>
+        <p>Chocolate wafer fingers blended in, with more standing tall on top.</p>
+      </li>
+      <li class="row" id="m-choc">
+        <div class="top"><h3>Chocolate Shake</h3><span class="dots"></span><span class="price">₹90</span></div>
+        <p>A deep chocolate shake with a syrup swirl and chocolate pieces.</p>
+      </li>
+      <li class="row" id="m-mango">
+        <div class="top"><h3>Alphonso Shake</h3><span class="dots"></span><span class="price">₹90</span></div>
+        <p>Sweet Alphonso mango, topped with fresh mango pieces.</p>
+      </li>
+      <li class="row" id="m-straw">
+        <div class="top"><h3>Strawberry</h3><span class="dots"></span><span class="price">₹90</span></div>
+        <p>A fresh strawberry shake with whipped cream and a strawberry on top.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="block wrap" id="signature" style="padding-top:0">
+  <div class="sig frame">
+    <div class="art"><svg viewBox="0 0 120 270" role="img" aria-label="Death By Chocolate Strawberry Loaded shake"><use href="#g-sig"/></svg></div>
+    <div>
+      <div class="eyebrow">Signature</div>
+      <h2>Death By Chocolate <em>Strawberry Loaded</em></h2>
+      <p>Our biggest shake. Chocolate and strawberry together, loaded with strawberries, cream and strawberry sauce.</p>
+      <span class="price">₹130</span>
+    </div>
+  </div>
+</section>
+
+<section class="block visit" id="visit">
+  <div class="wrap">
+    <div class="eyebrow">Find us</div>
+    <div class="arch">
+      <div class="label">Stall No.</div>
+      <p class="big20" aria-label="Number 20">20</p>
+      <svg class="orn" viewBox="0 0 240 16" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="addr">Bhavan, Shri Krishnagar,<br>Nagpur</p>
+      <p class="note">Look for Shakeology, choose your flavour and enjoy it cold.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bhavan%2C+Shri+Krishnagar%2C+Nagpur">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="orn" viewBox="0 0 240 16" aria-hidden="true"><use href="#orn"/></svg>
+    <p><strong>Shakeology</strong> · Stall No. 20 · Bhavan, Shri Krishnagar, Nagpur</p>
+  </div>
+</footer>
+
+</body></html>
